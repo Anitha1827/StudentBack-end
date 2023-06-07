@@ -1,7 +1,7 @@
 import {MongoClient} from "mongodb"
 import Obj from "mongodb"
 
-const MongoURL = "mongodb://127.0.0.1:27017"
+const MongoURL = "mongodb+srv://anithah2711:anitha@cluster0.cfkorlw.mongodb.net/guvi"
 async function createConnection(){
 const client = new MongoClient(MongoURL);
 await client.connect()
