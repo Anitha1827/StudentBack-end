@@ -2,38 +2,38 @@ import { ObjectId } from "mongodb";
 import { client } from "../db.js";
 
 
-export function getAllStudents(req){
+export function getAllMentors(req){
     return client
     .db("guvi")
-    .collection("students")
+    .collection("mentors")
     .find(req.query) 
     .toArray()
 }
 
-export function getAllStudentsById(id){
+export function getAllMentorsById(id){
     return client
     .db("guvi")
-    .collection("students")
+    .collection("mentors")
     .findOne({_id: new ObjectId(id)}) 
 }
 
 
-export function addStudentsData(data){
+export function addMentorsData(data){
     return client 
     .db("guvi")
-    .collection("students")
+    .collection("mentors")
     .insertOne(data) 
 }
-export function updateStudentData(id, updatedData){
+export function updateMentorsData(id, updatedData){
     return client 
     .db("guvi")
-    .collection("students")
+    .collection("mentors")
     .findOneAndUpdate({_id: new ObjectId(id)}, {$set: updatedData}) 
 }
 
-export function deleteStudentsData(id){
+export function deleteMentorsData(id){
     return client 
     .db("guvi")
-    .collection("students")
+    .collection("mentors")
     .deleteOne({_id: new ObjectId(id)}) 
 }
